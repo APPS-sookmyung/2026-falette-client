@@ -1,5 +1,4 @@
 import "./Background.css";
-import Gradient_top from "./Gradient_top";
 
 function Background() {
     // 색선택 버튼 클릭 시 색이 변화하는 함수 추가 예정!
@@ -36,7 +35,6 @@ function Background() {
                     </svg>
                 </div>
             </div>
-            <Gradient_top/>
         </div>
     );
 }
