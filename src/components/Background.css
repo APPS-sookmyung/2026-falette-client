@@ -1,85 +1,72 @@
 .background {
   position: fixed;
-
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  overflow: hidden;
+  contain: strict; /* 내부 변화가 페이지 전체 레이아웃에 영향 주지 않게 */
 
-  background-color: #6A83F1;
+  background-color: #6E85F0;
   background-image:
-    radial-gradient(ellipse at 5% 85%, rgba(222, 207, 247, 0.8) 0%, transparent 45%),
-    radial-gradient(ellipse at 10% 95%, rgba(222, 207, 247, 0.8) 10%, transparent 30%),
-    radial-gradient(circle at 43% 70%, rgba(206, 183, 253, 0.7) 0%, transparent 55%),
-    radial-gradient(circle at 95% 15%, rgba(240, 220, 245, 0.75) 0%, transparent 50%),
-    radial-gradient(circle at 75% 30%, rgba(255, 185, 248, 0.6) 0%, transparent 35%);
+    radial-gradient(circle at 100% 0%, rgba(235, 215, 247, 1) 0%, rgba(235, 215, 247, 0) 28%),
+    radial-gradient(ellipse at 82% 28%, rgba(200, 180, 248, 0.8) 0%, transparent 38%),
+    radial-gradient(ellipse at 8% 100%, rgba(228, 210, 247, 1) 0%, transparent 45%),
+    radial-gradient(ellipse at 45% 0%, rgba(160, 155, 245, 0.8) 0%, transparent 45%);
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layer path {
+  fill: none;
+  stroke-linecap: round;
 }
 
 .wave_wide_center {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    fill: none;
-    stroke: rgba(210, 185, 251, 0.7);
-    stroke-width: 170px;
-
-    filter: blur(40px);
-
-    animation: waveGlowWide 4s ease-in-out infinite alternate;
+  stroke: rgba(205, 190, 250, 0.85);
+  stroke-width: 170;
 }
 
+/* 필터가 하나로 합쳐져 블러가 더 퍼지므로 굵기를 키워 하이라이트 유지 */
 .wave_narrow_center {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    fill: none;
-    stroke: rgba(231, 216, 253, 0.6);
-    stroke-width: 30px;
-
-    filter: blur(35px);
+  stroke: rgba(228, 214, 252, 0.6);
+  stroke-width: 70;
 }
 
 .wave_top {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    fill: none;
-    stroke: rgba(231, 216, 253, 0.3);
-    stroke-width: 100px;
-
-    filter: blur(50px);
+  stroke: rgba(200, 182, 248, 0.45);
+  stroke-width: 120;
 }
 
 .wave_bottom {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    fill: none;
-    stroke: rgba(231, 216, 253, 0.3);
-    stroke-width: 50px;
-
-    filter: blur(35px);
+  stroke: rgba(158, 150, 240, 0.6);
+  stroke-width: 150;
 }
 
-/* 밝기 변화 애니메이션 */
-@keyframes waveGlow {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+/* GPU 합성만 사용하는 애니메이션 (transform + opacity) */
+.drift {
+  will-change: transform, opacity;
+  animation: drift 8s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-2%, 1.5%, 0) scale(1.03);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate3d(2%, -1.5%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift { animation: none; }
 }
