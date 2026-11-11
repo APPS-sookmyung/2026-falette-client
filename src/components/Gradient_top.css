@@ -1,0 +1,14 @@
+.gradient-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.gradient-top svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
