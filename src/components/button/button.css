@@ -1,0 +1,35 @@
+/* 공통 버튼 */
+
+.custom-button {
+    /* ⭐ 버튼 너비 */
+    width: 600px;
+
+    /* 버튼 높이 */
+    height: 95px;
+
+    /* 버튼 모서리 둥글게 */
+    border-radius: 30px;
+
+    /* 기본 HTML button에 들어가는 브라우저 기본 테두리 제거 */
+    border: none;
+
+    /* #3F0DBF 색상에 opacity 15% 적용 */
+    background: rgba(63, 13, 191, 0.15);
+
+    /* 두 개의 Inner Shadow 적용 */
+    box-shadow:
+        inset 1px 1px 4px rgba(255, 255, 255, 0.6),
+        inset -1.5px -2px 2px rgba(85, 75, 196, 0.3);
+
+    /* 버튼 안의 글자 색상 */
+    color: white;
+
+    /* 마우스를 버튼 위에 올렸을 때 클릭 가능한 요소라는 것 표시 */
+    cursor: pointer;
+
+    /* 부모 요소의 폰트를 이어받도록 설정 */
+    font: inherit;
+
+    /* width와 height 안에 padding과 border가 포함되도록 설정 */
+    box-sizing: border-box;
+}

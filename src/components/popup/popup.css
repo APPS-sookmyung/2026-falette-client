@@ -1,0 +1,37 @@
+/* 흰색 팝업 박스 */
+.popup-box {
+    /* 브라우저 화면을 기준으로 위치를 고정함 */
+    position: fixed;
+
+    /* 화면 위쪽에서 143px 떨어진 위치에 팝업 배치 */
+    top: 143px;
+
+    /* 팝업의 왼쪽 시작점을 화면 가로 50% 지점으로 이동 */
+    left: 50%;
+
+    /* 팝업 자신의 너비의 절반만큼 다시 왼쪽으로 이동해서 가운데 정렬 */
+    transform: translateX(-50%);
+
+    /* 원래 1719px이지만 화면보다 커지는 것을 방지 */
+    width: min(1719px, calc(100vw - 200px));
+
+    /* 팝업 높이 */
+    height: min(1009px, calc(100vh - 170px));
+
+    /* 팝업 배경색: #EAE2FF + opacity 30% */
+    background: rgba(234, 226, 255, 0.3);
+
+    /* 팝업 모서리 둥글게 */
+    border-radius: 70px;
+
+    /* 두 개의 Inner Shadow 적용 */
+    box-shadow:
+        inset 2px 2px 8.5px rgba(255, 255, 255, 0.63),
+        inset -3px -5px 4.5px rgba(85, 75, 196, 0.3);
+
+    /* 다른 화면 요소보다 위에 표시되도록 설정 (숫자가 클수록 앞쪽에 표시) */
+    z-index: 1000;
+
+    /* width와 height 계산에 padding이나 border가 포함되도록 */
+    box-sizing: border-box;
+}
