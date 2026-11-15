@@ -10,3 +10,13 @@ body,
     width: 100%;
     min-height: 100%;
 }
+
+@font-face {
+  font-family: 'AbhayaLibre';
+  src: url('./assets/abhaya-libre-semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/Pretendard-Medium.otf') format('opentype');
+}
