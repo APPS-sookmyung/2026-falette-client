@@ -36,6 +36,18 @@ function Header () {
         }
     };
 
+    const handleCardGalleryClick = (e: React.MouseEvent) => {
+        e.preventDefault();   // Link의 페이지 이동 막기
+        alert("아직 사용할 수 없는 기능입니다.");
+    };
+
+    const handleMyPageClick = (e: React.MouseEvent) => {
+        if (!isLoggedIn) {
+            e.preventDefault();
+            alert("로그인 후 이용 가능합니다.");
+        }
+    };
+
     return (
         <header className="app-header">
             <Gradient_top/>
@@ -44,10 +56,18 @@ function Header () {
                 <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
                     Home
                 </Link>
-                <Link to="/cardgallery" className={`nav-link ${location.pathname === '/cardgallery' ? 'active' : ''}`}>
+                <Link
+                    to="/cardgallery"
+                    className={`nav-link ${location.pathname === '/cardgallery' ? 'active' : ''}`}
+                    onClick={handleCardGalleryClick}
+                >
                     Card Gallery
                 </Link>
-                <Link to="/mypage"className={`nav-link ${location.pathname === '/mypage' ? 'active' : ''}`}>
+                <Link
+                    to="/mypage"
+                    className={`nav-link ${location.pathname === '/mypage' ? 'active' : ''}`}
+                    onClick={handleMyPageClick}                   // 추가
+                >
                     My Page
                 </Link>
             </nav>
