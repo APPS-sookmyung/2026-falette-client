@@ -110,13 +110,10 @@
     padding: 71px 76px 82px 73px;
 
     background: rgba(64, 59, 115, 0.3);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow:
-        inset -3px -5px 4.5px rgba(85, 75, 196, 0.3),
-        inset 2px 2px 8.5px rgba(255, 255, 255, 0.63);
-    border: none;
+    box-shadow: inset -3px -5px 4.5px rgba(85, 75, 196, 0.3), inset 2px 2px 8.5px rgba(255, 255, 255, 0.63);
     border-radius: 70px;
+
+    backdrop-filter: blur(15px);
 
     color: #FFFFFF;
     font-family: 'Inter', 'Pretendard', sans-serif;
@@ -162,5 +159,5 @@
 }
 
 .login-modal-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.307);
 }
