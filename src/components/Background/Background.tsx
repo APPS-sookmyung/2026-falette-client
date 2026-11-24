@@ -1,5 +1,5 @@
 import "./Background.css";
-import gradientAsset from "../assets/background.svg";
+import gradientAsset from "../../assets/background.svg";
 
 function Background() {
     return (

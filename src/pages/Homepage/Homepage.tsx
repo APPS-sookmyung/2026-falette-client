@@ -1,8 +1,8 @@
 import "./Homepage.css";
-import homelogo from "../assets/homelogo.svg";
+import homelogo from "../../assets/homelogo.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getMe, startAsGuest, loginWithGoogle } from "../utils/auth.ts";
+import { getMe, startAsGuest, loginWithGoogle } from "../../utils/auth.ts";
 
 function Homepage() {
     const navigate = useNavigate();
