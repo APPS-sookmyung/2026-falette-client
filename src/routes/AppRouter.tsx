@@ -10,6 +10,7 @@ function AppRouter() {
             <Route element={<MainLayout />}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/mypage" element={<Mypage />} />
+                <Route path="/concern" />
             </Route>
         </Routes>
     );
