@@ -1,0 +1,112 @@
+.mypage {
+  width: 100%;
+}
+
+/* GlassBackground 내부 레이아웃 */
+.mypage-content {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 850px;
+  position: relative;
+}
+
+/* 캘린더 영역 */
+.calendar-panel {
+  flex: 1;
+  min-width: 0;
+  padding-inline: clamp(20px, 3vw, 50px);
+  box-sizing: border-box;
+  transition: flex 0.4s ease;
+  margin-top: 20px;
+}
+
+/* 기록 상세 영역 (바깥 래퍼) */
+.record-detail {
+  flex: 0 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  align-self: flex-start;
+  animation: detailSlideIn 0.4s ease;
+}
+
+/* GlassBackground의 배치 관련 값 덮어쓰기 */
+.glass-background.record-detail-panel {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  z-index: auto;
+
+  width: 686px;
+  height: 1009px;
+}
+
+/* 닫기 버튼 */
+.record-detail-close {
+  position: absolute;
+  top: 45px;
+  left: calc(50% - 31.61px/2 - 280.19px);
+  z-index: 1;
+
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.record-detail-close:hover {
+  color: #ffffffda;
+}
+
+/* 상세 내용: 패널 전체를 기준 영역으로 */
+.record-detail-content {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  color: white;
+}
+
+/* 카드 이미지 */
+.record-detail-image {
+  position: absolute;
+  width: 322px;
+  height: 563px;
+  left: 182px;
+  top: 98px;
+  background: #FFFFFF;
+  border-radius: 40px;
+}
+
+/* 카드 이름 */
+.record-detail-content h3 {
+  position: absolute;
+  top: 693px;
+  left: 275px;
+  margin: 0;
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 카드 설명 */
+.record-detail-content p {
+  position: absolute;
+  top: 744px;
+  left: 111px;
+  margin: 0;
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 등장 애니메이션 */
+@keyframes detailSlideIn {
+  from {
+    opacity: 0;
+    /* transform: translateX(-20px); */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

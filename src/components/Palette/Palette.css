@@ -1,0 +1,20 @@
+.palette {
+    position: absolute;
+    left: 50%;
+    top: 56.481vh;
+    width: 145.417vw;
+    height: 93.056vh;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4) 21.63%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: inset 0px 4px 12px rgba(229, 226, 255, 0.27);
+
+    pointer-events: none;
+
+    z-index: 30;
+}

@@ -1,0 +1,163 @@
+.common-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+
+    width: 90%;
+}
+
+.exp {
+    margin: 0;
+    font-family: 'Gmarket Sans', 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.start-button {
+    position: relative;
+    overflow: hidden;
+
+    width: 218px;
+    height: 56px;
+    margin-top: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #6E76E3;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: none;
+    border-radius: 147px;
+    box-shadow:
+        0px 1px 1.2px #9EB5CA,
+        -1px 0px 1.75px rgba(23, 0, 80, 0.25),
+        1px 0px 1.74533px rgba(23, 0, 80, 0.25),
+        inset 0px 2px 3.8px rgba(255, 255, 255, 0.58),
+        inset 0px -4px 5.6px -2px #A195FF;
+
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* 위·아래로 비치는 반사 글자 */
+.start-button::before,
+.start-button::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+
+    font: inherit;
+    color: #8F9BFF;
+    opacity: 0.55;
+    filter: blur(1.5px);
+    pointer-events: none;
+}
+
+/* 위쪽: 글자를 뒤집어서 버튼 윗가장자리에 살짝만 보이게 */
+.start-button::before {
+    top: -14px;
+    transform: translateX(-50%) scaleY(-1);
+}
+
+/* 아래쪽: 아래 가장자리에 살짝만 보이게 */
+.start-button::after {
+    bottom: -14px;
+    transform: translateX(-50%) scaleY(-1);
+}
+
+.start-button:hover {
+    color: #ffffff;
+}
+
+.login-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.login-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 515px;
+    height: 653px;
+    box-sizing: border-box;
+    padding: 71px 76px 82px 73px;
+
+    background: rgba(64, 59, 115, 0.3);
+    box-shadow: inset -3px -5px 4.5px rgba(85, 75, 196, 0.3), inset 2px 2px 8.5px rgba(255, 255, 255, 0.63);
+    border-radius: 70px;
+
+    backdrop-filter: blur(15px);
+
+    color: #FFFFFF;
+    font-family: 'Inter', 'Pretendard', sans-serif;
+}
+
+.login-modal-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.login-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding-left: 4px;                     /* 버튼 left 77 − 제목 left 73 */
+}
+
+.login-modal-btn {
+    width: 362px;
+    height: 76.87px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    background: rgba(65, 65, 65, 0.09);
+    box-shadow: 0px -1px 15.1px -4px rgba(255, 255, 255, 0.54);
+    border: none;
+    border-radius: 46px;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.307);
+}

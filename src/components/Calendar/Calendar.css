@@ -1,0 +1,166 @@
+/* Calendar.css
+   - react-calendar/dist/Calendar.css 뒤에 import 되므로
+     `.calendar-container` 접두사로 기본 스타일을 덮어씀 */
+
+.calendar-container {
+  width: 100%;
+  max-width: 1566px;
+  min-width: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: clamp(24px, 3vw, 60px) 0;
+  color: #ffffff;
+  font-family: "Inter", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 헤더 (월 이동) */
+.calendar-container .calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: clamp(32px, 3.33vw, 64px);
+}
+
+.calendar-container .calendar-header h2 {
+  margin: 0;
+  font-size: clamp(28px, 2.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+
+/* 헤더 버튼 */
+.calendar-container .calendar-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(36px, 3vw, 56px);
+  height: clamp(36px, 3vw, 56px);
+
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+}
+
+.calendar-container .calendar-header button:hover {
+  color: #fff;
+}
+
+.calendar-container .calendar-header button svg {
+  display: block;
+  height: 60%;      /* 버튼 크기에 맞춰 같이 커짐 */
+  width: auto;
+}
+
+/*  react-calendar 기본 스타일 리셋 */
+.calendar-container .react-calendar {
+  width: 100%;
+  max-width: 1078px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  line-height: normal;
+}
+
+/* 요일 */
+.calendar-container .react-calendar__month-view__weekdays {
+  margin-bottom: clamp(16px, 1.85vw, 36px);
+}
+
+.calendar-container .react-calendar__month-view__weekdays__weekday {
+  padding: 0;
+  font-size: clamp(14px, 1.67vw, 32px);
+  font-weight: 600;
+  line-height: 1.22;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.calendar-container .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  cursor: default;
+}
+
+/* 날짜 타일 */
+.calendar-container .react-calendar__tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(56px, 5.15vw, 99px);
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: clamp(14px, 1.67vw, 32px);
+  font-weight: 400;
+  color: #ffffff;
+  cursor: default;
+}
+
+/* 기본 오늘/선택/호버/포커스 배경 제거 */
+.calendar-container .react-calendar__tile--now,
+.calendar-container .react-calendar__tile--active,
+.calendar-container .react-calendar__tile:enabled:hover,
+.calendar-container .react-calendar__tile:enabled:focus {
+  background: transparent;
+  color: #ffffff;
+}
+
+.calendar-container .react-calendar__tile abbr {
+  position: relative;
+  z-index: 1;
+}
+
+/* 색상 원 (Figma: 67px, 3px) */
+.calendar-container .react-calendar__tile::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(40px, 3.5vw, 67px);
+  height: clamp(40px, 3.5vw, 67px);
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* 기록 있는 날짜 */
+.calendar-container .react-calendar__tile[class*="color-"] {
+  cursor: pointer;
+}
+
+.calendar-container .react-calendar__tile[class*="color-"]::after {
+  border-color: var(--tile-color);
+}
+
+/* 오늘 날짜: 원 안을 45% 투명도로 채움 */
+.calendar-container .react-calendar__tile--now[class*="color-"]::after {
+  background: color-mix(in srgb, var(--tile-color) 45%, transparent);
+}
+
+/* 색상 팔레트 */
+.calendar-container .color-RED    { --tile-color: #FF5858; }
+.calendar-container .color-ORANGE { --tile-color: #FF9B45; }
+.calendar-container .color-YELLOW { --tile-color: #FFF788; }
+.calendar-container .color-GREEN  { --tile-color: #70FF72; }
+.calendar-container .color-BLUE   { --tile-color: #4DB2FF; }
+.calendar-container .color-NAVY   { --tile-color: #3C70FF; }
+.calendar-container .color-PURPLE { --tile-color: #9849FF; }
+.calendar-container .color-WHITE   { --tile-color: #FFFFFF; }
+.calendar-container .color-BLACK  { --tile-color: #333333; }
