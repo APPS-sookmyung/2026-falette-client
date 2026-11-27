@@ -5,8 +5,13 @@ import Gradient_top from './Gradient_top.tsx'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { getMe, logout } from "../../utils/auth.ts";
+import type { BackgroundColor } from "../../types/backgroundColors";
 
-function Header () {
+type HeaderProps = {
+    backgroundColor: BackgroundColor | null;
+};
+
+function Header({ backgroundColor }: HeaderProps) {
     const location = useLocation();
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,7 +55,7 @@ function Header () {
 
     return (
         <header className="app-header">
-            <Gradient_top/>
+            <Gradient_top color={backgroundColor} />
             <img className="header-logo" src={logo} alt="Falette"/>
             <nav className="header-nav">
                 <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>

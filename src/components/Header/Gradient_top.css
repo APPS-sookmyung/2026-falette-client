@@ -11,4 +11,5 @@
     display: block;
     width: 100%;
     height: auto;
+    transition: filter 400ms ease;
 }

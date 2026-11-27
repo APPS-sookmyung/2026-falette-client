@@ -1,0 +1,18 @@
+.glass-background-white {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 1719px;
+    height: 2375px;
+
+    position: absolute;
+    top: 143px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    background: rgba(255, 255, 255, 0.171);
+    box-shadow: inset -3px -5px 4.5px #E5E2FF, inset 2px 2px 8.5px rgba(255, 255, 255, 0.63);
+    border-radius: 70px;
+}

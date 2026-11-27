@@ -1,7 +1,12 @@
 import "./Background.css";
 import gradientAsset from "../../assets/background.svg";
+import { colorFilters, type BackgroundColor } from "../../types/backgroundColors";
 
-function Background() {
+type BackgroundProps = {
+    color: BackgroundColor | null;
+};
+
+function Background({ color }: BackgroundProps) {
     return (
         <div className="background">
             <img
@@ -9,10 +14,10 @@ function Background() {
                 src={gradientAsset}
                 alt=""
                 aria-hidden="true"
-                draggable="false"
+                draggable={false}
+                style={{ filter: color === null ? "none" : colorFilters[color] }}
             />
         </div>
     );
 }
-
 export default Background;
